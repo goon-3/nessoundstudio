@@ -13,9 +13,9 @@ OBJS= note.o\
 	dmcsample.o \
 	noteduration.o \
 
-SDLSOURCES = gfx/screen.cc \
-	gfx/sdl_screen.cc \
-	gfx/sdl.cc \
+SDLSOURCES = gfx/sdl_core/screen.cc \
+	gfx/sdl_core/sdl_screen.cc \
+	gfx/sdl_core/sdl.cc \
 	
 SDLOBJS = gfx/screen.o \
 	gfx/sdl_screen.o \
@@ -34,5 +34,5 @@ sdl: $(SDLOBJS)
 	$(CXX) `sdl-config --cflags` -c $<  
 
 clean:
-	rm -f *.o gfx/*.o nessoundstudio nessoundstudio.core
+	rm -f *.o gfx/*.o gfx/sdl_core/*.o gfx/allegro5core/*.o nessoundstudio nessoundstudio.core
 
