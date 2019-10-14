@@ -1,20 +1,38 @@
-CC="cc"
-CXX="c++"
+CC=cc
+CXX=c++
+
+SOURCES= note.cc\
+	nesapu.cc \
+	byte.cc \
+	dmcsample.cc \
+	noteduration.cc \
 
 OBJS= note.o\
 	nesapu.o \
 	byte.o \
 	dmcsample.o \
 	noteduration.o \
-	screen.o \
 
-all: main
+SDLSOURCES = gfx/screen.cc \
+	gfx/sdl_screen.cc \
+	gfx/sdl.cc \
+	
+SDLOBJS = gfx/screen.o \
+	gfx/sdl_screen.o \
+	gfx/sdl.o \
+	
 
-main: $(OBJS) main.o
+all:  main
+
+main:
+	$(CXX) `sdl-config --cflags` -c $(SDLSOURCES)
+	$(CXX) `sdl-config --cflags` -c $(SOURCES)
+	$(CXX) `sdl-config --cflags` -c main.cc 
 	$(CXX) `sdl-config --libs` -lSDL_image -o nessoundstudio main.o $(OBJS)
 
-clean:
-	rm -f *.o nessoundstudio nessoundstudio.core
+sdl: $(SDLOBJS)  
+	$(CXX) `sdl-config --cflags` -c $<  
 
-.cc.o:
-	$(CXX) `sdl-config --cflags` -c $< 
+clean:
+	rm -f *.o gfx/*.o nessoundstudio nessoundstudio.core
+

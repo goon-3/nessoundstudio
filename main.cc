@@ -1,13 +1,12 @@
 //See the LICENSE file for details
 #include <iostream>
 
-#include "screen.h"
+#include "gfx/screen.h"
 
 int main(int argc, char *argv[])
 {
 
-	Screen 	
-	
+	return 0;	
 }
 
 
