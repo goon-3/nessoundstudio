@@ -1,4 +1,5 @@
 #include "apu.h"
+#include "dmcsample.h"
 
 // A class which sets the NES APU e.g. the DMC channel on
 
@@ -26,4 +27,7 @@ class NESAPU
 	void enable_loop_flag();
 
 	void set_APU_duty_cycle(int hex);
+
+	public:
+	void write_sample_to_buffer(DMCSample& ds);
 };

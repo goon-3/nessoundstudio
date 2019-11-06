@@ -72,4 +72,10 @@ void NESAPU::set_APU_duty_cycle(int hex)
 	enable_(hex, dmc_pitch);
 }
 
+void NESAPU::write_sample_to_buffer(DMCSample& ds)
+{
+	enable_(ds.data(), sample_buffer);
+}
+
+
 

@@ -1,3 +1,6 @@
+#ifndef _NESSOUNDSTUDIO_NTS_PITCHES_H_
+#define _NESSOUNDSTUDIO_NTS_PITCHES_H_
+
 enum NTSC_DMC_PITCHES 
 {
 
@@ -18,4 +21,5 @@ enum NTSC_DMC_PITCHES
 	G10 = 0xE,
 	C11 = 0xF,	 
 };
-	
+
+#endif	
