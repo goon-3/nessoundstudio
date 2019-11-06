@@ -9,7 +9,9 @@ DMCSample::~DMCSample()
 {
 
 }
-	
+
+
+// a simple split method of hex tone height
 DMCSample DMCSample::calculate_half_note_within_interval(
 	DMCSample& start, 
 	DMCSample& end)

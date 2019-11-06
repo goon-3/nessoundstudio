@@ -1,3 +1,5 @@
+// A class which contains a solfege not duration e.g. a half note
+
 class NoteDuration
 {
 	public:
