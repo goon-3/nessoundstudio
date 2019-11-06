@@ -67,7 +67,7 @@ void NESAPU::enable_loop_flag()
 
 void NESAPU::set_APU_duty_cycle(int hex)
 {
-	// example : hex is in between bits 3-0, so hex is 0-F
+	// example : hex is in between bits 3-0, so hex is 0 to F
 	// 0 gives 428 so 1789773/428 = 4181.71 Hz  
 	enable_(hex, dmc_pitch);
 }
