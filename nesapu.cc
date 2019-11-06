@@ -57,12 +57,12 @@ void NESAPU::reset_(int hex = 0)
 
 void NESAPU::enable_interrupt_flag()
 {
-	enable_(4, dmc_pitch);
+	enable_(128, dmc_pitch);
 }
 
 void NESAPU::enable_loop_flag()
 {
-	enable_(2, dmc_pitch);
+	enable_(64, dmc_pitch);
 }
 
 void NESAPU::set_APU_duty_cycle(int hex)
